@@ -3,4 +3,77 @@
     margin: 0 auto;
     padding: 15px;
     background: #FFF7ED;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
+
+.van {}
+
+.van > img {
+    width: 229px;
+    aspect-ratio: 1;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.van > .text {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: 8px;
+}
+
+.van > .text > h3,
+.van > .text > .price {
+    color: #161616;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.van > .text > .price {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+}
+
+.van > .text > .price > span {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* rugged : #115E59 */
+/* luxury : #000 */
+/* simple : #E17654 */
+
+.van > .type > span {
+    min-width: 86px;
+    width: 100%;
+    height: 34px;
+
+    background: none;
+    color: #FFEAD0;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    padding: 9px 17px;
+}
+
+.van > .type > span.simple {
+    background: #E17654;
+}
+
+.van > .type > span.rugged {
+    background: #115E59;
+}
+
+.van > .type > span.luxury {
+    background: #000;
 }
