@@ -1,0 +1,107 @@
+.details {
+    max-width: 549px;
+    margin: 0 auto;
+    background: #FFF7ED;
+
+    padding: 20px;
+}
+
+.details > img {
+    width: 100%;
+    max-width: 497px;
+    height: 490px;
+
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+
+    border-radius: 5px;  
+}
+
+.details > .text {
+    max-width: 494px;
+    margin: 10px auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.details > .text > .type {
+    width: fit-content;
+    height: 34px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: none;
+    color: #FFEAD0;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    padding: 9px 17px;
+}
+
+.details > .text > .type.simple {
+    background: #E17654;
+}
+
+.details > .text > .type.rugged {
+    background: #115E59;
+}
+
+.details > .text > .type.luxury {
+    background: #000;
+}
+
+.details > .text > h1 {
+    color: #161616;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.details > .text > .price {
+    color: #161616;
+    display: flex;
+    align-items: center;
+}
+
+.details > .text > .price > p {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.details > .text > .price > span {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.details > .text > p {
+    font-weight: 500;
+    font-size: 16px;
+    color: #161616;
+    line-height: 1.5;
+}
+
+.details > .rent-button {
+    width: 100%;
+    max-width: 497px;
+    height: 50px;
+
+    display: block;
+    margin: 0 auto;
+
+    border-radius: 5px;
+    border: none;
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+
+    color: #FFFFFF;
+    background: #FF8C38;
+}

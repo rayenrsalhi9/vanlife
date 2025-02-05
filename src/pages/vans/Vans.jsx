@@ -25,8 +25,21 @@ export default function Vans() {
     })
     
     return (
-        <section className="vans">
-            {vansElements}
+        <section className='vans-container'>
+            <div className="filter-bar">
+                <h1>Explore our van options</h1>
+                <div className="filters-container">
+                    <div className="filters">
+                        <button>simple</button>
+                        <button>rugged</button>
+                        <button>luxury</button>
+                    </div>
+                    <button>clear filters</button>
+                </div>
+            </div>
+            <div className="vans">
+                {vansElements}
+            </div>
         </section>
     )
 }

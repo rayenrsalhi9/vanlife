@@ -1,8 +1,24 @@
+.vans-container {
+    max-width: 549px;
+    margin: 0 auto;
+    background: #FFF7ED;
+}
+
+.vans-container .filter-bar {
+    padding: 25px;
+}
+
+.vans-container .filter-bar > h1 {
+    color: #161616;
+    font-weight: 700;
+    font-size: 32px;
+}
+
 .vans {
     max-width: 549px;
     margin: 0 auto;
-    padding: 15px;
-    background: #FFF7ED;
+    margin-bottom: 30px;
+    
 
     display: flex;
     flex-wrap: wrap;
@@ -10,8 +26,6 @@
     align-items: center;
     gap: 20px;
 }
-
-.van {}
 
 .van > img {
     width: 229px;
