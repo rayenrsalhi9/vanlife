@@ -1,0 +1,53 @@
+header {
+    max-width: 549px;
+    height: 112px;
+
+    margin: 0 auto;
+    padding: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #FFF7ED;
+    border-bottom: 1px solid #ededed;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header .logo {
+    font-weight: 900;
+    font-size: 26px;
+    color: #111111;
+}
+
+header > nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+header > nav > a {
+    color: #4D4D4D;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+footer {
+    max-width: 549px;
+    height: 75px;
+    margin: 0 auto;
+
+    background: #252525;
+    color: #AAAAAA;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
