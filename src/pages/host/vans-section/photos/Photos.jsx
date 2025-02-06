@@ -1,7 +1,7 @@
-import './Photos.css'
+
 
 export default function Photos() {
     return (
-        <h3>Photos here</h3>
+        <h1>Photos here</h1>
     )
 }

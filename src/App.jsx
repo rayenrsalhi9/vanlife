@@ -12,6 +12,8 @@ import HostVanDetails from './pages/host/vans-section/details/HostVanDetails.jsx
 import Reviews from './pages/host/review-section/Reviews.jsx'
 import './App.css'
 import VansLayout from './pages/host/vans-section/VansLayout.jsx'
+import Pricing from './pages/host/vans-section/pricing/Pricing.jsx'
+import Photos from './pages/host/vans-section/photos/Photos.jsx'
 
 const App = () => {
     return(
@@ -30,6 +32,8 @@ const App = () => {
                         <Route path='vans' element={<HostVans />}/>
                         <Route path='vans/:id' element={<VansLayout />}>
                             <Route index element={<HostVanDetails />}/>
+                            <Route path='pricing' element={<Pricing />}/>
+                            <Route path='photos' element={<Photos />}/>
                         </Route>
                         <Route path='reviews' element={<Reviews />}/>
                     </Route>
