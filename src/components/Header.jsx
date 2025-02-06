@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 export default function Header() {
     return (
         <header>
-            <Link className='logo' to='/'>#VANLIFE</Link><br /> 
+            <Link className='logo' to='/'>#VANLIFE</Link>
             <nav>
-                <Link to='/about'>About</Link><br />
+                <Link to='/host'>Host</Link>
+                <Link to='/about'>About</Link>
                 <Link to='/vans'>Vans</Link>
             </nav>
         </header>

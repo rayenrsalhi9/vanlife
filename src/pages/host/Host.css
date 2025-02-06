@@ -1,0 +1,26 @@
+.host {
+    max-width: 549px;
+    margin: 0 auto;
+    background: #FFF7ED;
+    padding: 18px;
+}
+
+.host-navbar {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.host-navbar > a {
+    font-size: 18px;
+    font-weight: 500;
+    color: #4D4D4D;
+
+    transition: .4s;
+}
+
+.host-navbar > a:hover {
+    color: #000;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
