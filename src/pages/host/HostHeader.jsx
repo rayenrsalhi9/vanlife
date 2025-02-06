@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 export default function HostHeader() {
     return (
         <nav className="host-navbar">
-            <Link to='/host'>Dashboard</Link>
-            <Link to='/host/income'>Income</Link>
-            <Link to='/host/vans'>Vans</Link>
-            <Link to='/host/reviews'>Reviews</Link>
+            <NavLink to='/host' end>Dashboard</NavLink>
+            <NavLink to='/host/income'>Income</NavLink>
+            <NavLink to='/host/vans'>Vans</NavLink>
+            <NavLink to='/host/reviews'>Reviews</NavLink>
         </nav>
     )
 }
