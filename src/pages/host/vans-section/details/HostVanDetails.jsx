@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams, Link, NavLink } from "react-router-dom"
 import clsx from "clsx"
-import leftArrow from '../../assets/left-arrow.svg'
+import leftArrow from '../../../../assets/left-arrow.svg'
 import './HostVanDetails.css'
 
 export default function HostVanDetails() {

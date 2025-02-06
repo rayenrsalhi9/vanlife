@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom"
+import './HostHeader.css'
 
 export default function HostHeader() {
     return (

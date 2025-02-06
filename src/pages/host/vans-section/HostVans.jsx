@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import HostVan from "./HostVan"
-import '../../server'
+import '../../../server'
 
 export default function HostVans() {
     const [hostVans, setHostVans] = useState([])

@@ -1,0 +1,31 @@
+.host-navbar {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+@media(max-width: 465px) {
+    .host-navbar {
+        gap: 20px;
+    }
+}
+
+.host-navbar > a {
+    font-size: 18px;
+    font-weight: 500;
+    color: #4D4D4D;
+
+    transition: .4s;
+}
+
+.host-navbar > a:hover {
+    color: #000;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.host-navbar > a.active {
+    color: #000;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
