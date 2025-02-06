@@ -19,7 +19,7 @@ const App = () => {
                 <Route path='/' element={<Home />}/>
                 <Route path='/about' element={<About />}/>
                 <Route path='/vans' element={<Vans />} />
-                <Route path='/vans/1' element={<VanDetails />} />
+                <Route path='/vans/:id' element={<VanDetails />} />
             </Routes>
             <footer>
                 ©️ 2025 #VANLIFE

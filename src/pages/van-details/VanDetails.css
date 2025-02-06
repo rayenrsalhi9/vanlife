@@ -6,14 +6,40 @@
     padding: 20px;
 }
 
-.details > img {
+.details > a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.details > a > .left-arrow {
+    width: 11px;
+}
+
+.details > a > p {
+    font-size: 14px;
+    font-weight: 500;
+
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    color: #201F1D;
+    transition: .4s;
+}
+
+.details > a > p:hover {
+    color: #000;
+}
+
+.details > .details-img {
     width: 100%;
     max-width: 497px;
     height: 490px;
 
     display: block;
     margin: 0 auto;
-    object-fit: contain;
+    object-fit: cover;
 
     border-radius: 5px;  
 }

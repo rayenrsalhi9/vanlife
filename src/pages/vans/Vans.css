@@ -27,35 +27,35 @@
     gap: 20px;
 }
 
-.van > img {
+.van > a > img {
     width: 229px;
     aspect-ratio: 1;
     border-radius: 5px;
     object-fit: cover;
 }
 
-.van > .text {
+.van > a > .text {
     display: flex;
     justify-content: space-between;
     align-items: start;
     margin-top: 8px;
 }
 
-.van > .text > h3,
-.van > .text > .price {
+.van > a > .text > h3,
+.van > a > .text > .price {
     color: #161616;
     font-size: 20px;
     font-weight: 600;
 }
 
-.van > .text > .price {
+.van > a > .text > .price {
     display: flex;
     flex-direction: column;
     align-items: end;
     justify-content: center;
 }
 
-.van > .text > .price > span {
+.van > a > .text > .price > span {
     font-size: 14px;
     font-weight: 400;
 }
@@ -64,7 +64,7 @@
 /* luxury : #000 */
 /* simple : #E17654 */
 
-.van > .type > span {
+.van > a > .type > span {
     min-width: 86px;
     width: 100%;
     height: 34px;
@@ -80,14 +80,14 @@
     padding: 9px 17px;
 }
 
-.van > .type > span.simple {
+.van > a > .type > span.simple {
     background: #E17654;
 }
 
-.van > .type > span.rugged {
+.van > a > .type > span.rugged {
     background: #115E59;
 }
 
-.van > .type > span.luxury {
+.van > a > .type > span.luxury {
     background: #000;
 }

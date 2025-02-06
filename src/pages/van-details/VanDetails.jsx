@@ -1,17 +1,42 @@
+import { Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import clsx from 'clsx'
+import leftArrow from '../../assets/left-arrow.svg'
 import './VanDetails.css'
 
 export default function VanDetails() {
+    const params = useParams()
+    const [van, setVan] = useState({})
+
+    useEffect(() => {
+        fetch(`/api/vans/${params.id}`)
+        .then(data => data.json())
+        .then(res => setVan(res.vans))
+    }, [])
+
+    const className = clsx({
+        'type': true,
+        'simple': van.type === 'simple',
+        'rugged': van.type === 'rugged',
+        'luxury': van.type === 'luxury',
+    })
+    
     return (
         <section className="details">
-            <img src="https://assets.scrimba.com/advanced-react/react-router/modest-explorer.png" alt="van details image" className='details-img'/>
+            <Link to='/vans'>
+                <img src={leftArrow} alt="left arrow image" className='left-arrow' />
+                <p>Back to all vans</p>
+            </Link>
+            <img src={van.imageUrl} alt="van details image" className='details-img'/>
             <div className="text">
-                <p className='type simple'>simple</p>
-                <h1>Modest Explorer</h1>
+                <p className={className}>{van.type}</p>
+                <h1>{van.name}</h1>
                 <div className="price">
-                    <p>$60</p>
+                    <p>${van.price}</p>
                     <span>/day</span>
                 </div>
-                <p>The Modest Explorer is a van designed to get you out of the house and into nature. This beauty is equipped with solar panels, a composting toilet, a water tank and kitchenette. The idea is that you can pack up your home and escape for a weekend or even longer!</p>
+                <p>{van.description}</p>
             </div>
             <button className="rent-button">Rent this van</button>
         </section>
