@@ -1,0 +1,133 @@
+.host-van-details {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.host-van-details > a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.host-van-details > a > .left-arrow {
+    width: 11px;
+}
+
+.host-van-details > a > p {
+    font-size: 14px;
+    font-weight: 500;
+
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    color: #201F1D;
+    transition: .4s;
+}
+
+.host-van-details > a > p:hover {
+    color: #000;
+}
+
+.host-van-details > .details-container {
+    max-width: 496px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 6px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+}
+
+.host-van-details > .details-container .overview {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.host-van-details > .details-container .overview > img {
+    max-width: 160px;
+    aspect-ratio: 1;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.host-van-details > .details-container .overview > .text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.host-van-details > .details-container .overview > .text > .type {
+    color: #FFEAD0;
+
+    width: fit-content;
+    padding: 7px 14px;
+    border-radius: 4px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.host-van-details > .details-container .overview > .text > .type.simple {
+    background: #E17654;
+}
+
+.host-van-details > .details-container .overview > .text > .type.rugged {
+    background: #115E59;
+}
+
+.host-van-details > .details-container .overview > .text > .type.luxury {
+    background: #000;
+}
+
+.host-van-details > .details-container .overview > .text > .name {
+    font-size: 26px;
+    color: #161616;
+    font-weight: 700;
+}
+
+.host-van-details > .details-container .overview > .text > .price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #161616;
+}
+
+.host-van-details > .details-container .overview > .text > .price > span {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.host-van-details > .details-container > .navigation {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.host-van-details > .details-container > .navigation > a {
+    font-size: 16px;
+    font-weight: 500;
+    color: #4D4D4D;
+    transition: .4s;
+}
+
+.host-van-details > .details-container > .navigation > a:hover,
+.host-van-details > .details-container > .navigation > a.active {
+    color: #000;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.host-van-details .van-details {
+    font-size: 15px;
+    color: #161616;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

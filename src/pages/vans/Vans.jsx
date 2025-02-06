@@ -9,10 +9,10 @@ export default function Vans() {
     const [vans, setVans] = useState([])
 
     useEffect(() => {
-        fetch('api/vans')
+        fetch('/api/vans')
             .then(data => data.json())
             .then(res => setVans(res.vans))
-            .catch(error => console.error("Error fetching word:", error));
+            .catch(error => console.error("Error fetching vans:", error));
     }, [])
 
     const vansElements = vans.map(el => {
