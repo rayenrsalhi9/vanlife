@@ -1,0 +1,19 @@
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.navigation > a {
+    font-size: 16px;
+    font-weight: 500;
+    color: #4D4D4D;
+    transition: .4s;
+}
+
+.navigation > a:hover,
+.navigation > a.active {
+    color: #000;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}

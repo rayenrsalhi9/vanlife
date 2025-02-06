@@ -1,0 +1,94 @@
+/* Vans layout container */
+.vans-layout {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Link : back to all vans */
+.vans-layout > a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.vans-layout > a > .left-arrow {
+    width: 11px;
+}
+
+.vans-layout > a > p {
+    font-size: 14px;
+    font-weight: 500;
+
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    color: #201F1D;
+    transition: .4s;
+}
+
+.vans-layout > a > p:hover {
+    color: #000;
+}
+
+/* Overview */
+.overview {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.overview > img {
+    max-width: 160px;
+    aspect-ratio: 1;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.overview > .text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.overview > .text > .type {
+    color: #FFEAD0;
+
+    width: fit-content;
+    padding: 7px 14px;
+    border-radius: 4px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.overview > .text > .type.simple {
+    background: #E17654;
+}
+
+.overview > .text > .type.rugged {
+    background: #115E59;
+}
+
+.overview > .text > .type.luxury {
+    background: #000;
+}
+
+.overview > .text > .name {
+    font-size: 26px;
+    color: #161616;
+    font-weight: 700;
+}
+
+.overview > .text > .price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #161616;
+}
+
+.overview > .text > .price > span {
+    font-size: 16px;
+    font-weight: 500;
+}
