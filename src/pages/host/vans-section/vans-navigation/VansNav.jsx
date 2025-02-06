@@ -5,7 +5,7 @@ import './VansNav.css'
 export default function VansNav({id}) {
     return (
         <div className="navigation">
-            <NavLink to={`/host/vans/${id}`}>
+            <NavLink end to={`/host/vans/${id}`}>
                 Details
             </NavLink>
             <NavLink to={`/host/vans/${id}/pricing`}>
