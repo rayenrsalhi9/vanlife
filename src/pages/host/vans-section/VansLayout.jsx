@@ -37,7 +37,7 @@ export default function VansLayout() {
                     <p className="price">${details.price}<span>/day</span></p>
                 </div>
             </div>
-            <VansNav id={id} />
+            <VansNav/>
             {details && <Outlet context={details} />}
         </section>
     )

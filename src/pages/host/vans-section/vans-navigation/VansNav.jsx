@@ -2,16 +2,16 @@ import { NavLink } from "react-router-dom"
 import propTypes from 'prop-types'
 import './VansNav.css'
 
-export default function VansNav({id}) {
+export default function VansNav() {
     return (
         <div className="navigation">
-            <NavLink end to={`/host/vans/${id}`}>
+            <NavLink end to={'.'} relative="path">
                 Details
             </NavLink>
-            <NavLink to={`/host/vans/${id}/pricing`}>
+            <NavLink to={'pricing'} relative="path">
                 Pricing
             </NavLink>
-            <NavLink to={`/host/vans/${id}/photos`}>
+            <NavLink to={'photos'} relative="path">
                 Photos
             </NavLink>
         </div>
