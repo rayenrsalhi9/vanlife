@@ -27,7 +27,7 @@ export default function VanDetails() {
         <section className="details">
             {van ? (
                 <>
-                    <Link to='/vans'>
+                    <Link to='..' relative='path'>
                         <img src={leftArrow} alt="left arrow image" className='left-arrow' />
                         <p>Back to all vans</p>
                     </Link>

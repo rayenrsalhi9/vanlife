@@ -25,7 +25,7 @@ export default function VansLayout() {
 
     return (
         <section className="vans-layout">
-            <Link to='/host/vans'>
+            <Link to='..' relative="path">
                 <img src={leftArrow} alt="left arrow image" className='left-arrow' />
                 <p>Back to all vans</p>
             </Link>

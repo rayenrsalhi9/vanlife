@@ -5,7 +5,7 @@ export default function HostVan({van}) {
     return (
         <Link to={`${van.id}`}>
             <div className="van-container">
-                <img src={van.imageUrl} alt="van host image" />
+                <img src={van.imageUrl} alt="van host image" loading='lazy'/>
                 <div className="text">
                     <h3>{van.name}</h3>
                     <p>${van.price}<span>/day</span></p>
