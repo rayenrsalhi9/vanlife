@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import './Van.css'
 
 export default function Van({ van, vanClassName }) {
     return (

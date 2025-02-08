@@ -1,0 +1,81 @@
+.filter-bar {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+.filter-bar > h1 {
+    color: #161616;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.filter-bar > .filters-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-bar > .filters-container > .filters {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.filter-bar > .filters-container > .filters > a {
+    width: 104px;
+    height: 37px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #FFEAD0;
+    color: #4D4D4D;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: .4s;
+}
+
+.filter-bar > .filters-container > .filters > a.simple:hover,
+.filter-bar > .filters-container > .filters > a.simple.active {
+    background: #E17654;
+    color: #FFEAD0;
+}
+
+.filter-bar > .filters-container > .filters > a.rugged:hover,
+.filter-bar > .filters-container > .filters > a.rugged.active {
+    background: #115E59;
+    color: #FFEAD0;
+}
+
+.filter-bar > .filters-container > .filters > a.luxury:hover,
+.filter-bar > .filters-container > .filters > a.luxury.active {
+    background: #000;
+    color: #FFEAD0;
+}
+
+.clear-filter-option {
+    font-size: 16px;
+    font-weight: 500;
+
+    color: #4D4D4D;
+
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    cursor: pointer;
+    transition: .4s;
+}
+
+.clear-filter-option:hover {
+    color: #000;
+}

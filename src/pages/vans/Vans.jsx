@@ -1,11 +1,19 @@
 import { useEffect, useState } from 'react'
-import clsx from 'clsx'
+import { useSearchParams } from 'react-router-dom'
+import Filter from './Filter'
 import Van from './Van'
+import clsx from 'clsx'
 import './Vans.css'
 import '../../server'
 
 export default function Vans() {
 
+    // filtering vans
+    const [searchParams, setSearchParams] = useSearchParams();
+    const filterType = searchParams.get('type')
+    console.log(filterType)
+    
+    // displaying vans
     const [vans, setVans] = useState([])
 
     useEffect(() => {
@@ -21,22 +29,15 @@ export default function Vans() {
             'rugged': el.type === 'rugged',
             'luxury': el.type === 'luxury'
         })
-        return <Van key={el.id} van={el} vanClassName={vanClassName}/>
+        return(
+            !filterType ? <Van key={el.id} van={el} vanClassName={vanClassName}/> :
+            el.type === filterType && <Van key={el.id} van={el} vanClassName={vanClassName}/>
+        )
     })
     
     return (
         <section className='vans-container'>
-            <div className="filter-bar">
-                <h1>Explore our van options</h1>
-                <div className="filters-container">
-                    <div className="filters">
-                        <button>simple</button>
-                        <button>rugged</button>
-                        <button>luxury</button>
-                    </div>
-                    <button>clear filters</button>
-                </div>
-            </div>
+            <Filter />
             <div className="vans">
                 {vansElements}
             </div>
