@@ -11,7 +11,6 @@ export default function Vans() {
     // filtering vans
     const [searchParams, setSearchParams] = useSearchParams();
     const filterType = searchParams.get('type')
-    console.log(filterType)
     
     // displaying vans
     const [vans, setVans] = useState([])
@@ -37,7 +36,7 @@ export default function Vans() {
     
     return (
         <section className='vans-container'>
-            <Filter />
+            <Filter filterType={filterType} />
             <div className="vans">
                 {vansElements}
             </div>

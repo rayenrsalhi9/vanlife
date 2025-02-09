@@ -46,19 +46,19 @@
 }
 
 .filter-bar > .filters-container > .filters > a.simple:hover,
-.filter-bar > .filters-container > .filters > a.simple.active {
+.filter-bar > .filters-container > .filters > a.simple.selected {
     background: #E17654;
     color: #FFEAD0;
 }
 
 .filter-bar > .filters-container > .filters > a.rugged:hover,
-.filter-bar > .filters-container > .filters > a.rugged.active {
+.filter-bar > .filters-container > .filters > a.rugged.selected {
     background: #115E59;
     color: #FFEAD0;
 }
 
 .filter-bar > .filters-container > .filters > a.luxury:hover,
-.filter-bar > .filters-container > .filters > a.luxury.active {
+.filter-bar > .filters-container > .filters > a.luxury.selected {
     background: #000;
     color: #FFEAD0;
 }
