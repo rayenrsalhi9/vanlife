@@ -36,7 +36,7 @@ export default function Vans() {
     
     return (
         <section className='vans-container'>
-            <Filter filterType={filterType} />
+            <Filter filterType={filterType} searchParams={searchParams} />
             <div className="vans">
                 {vansElements}
             </div>
