@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function HostVan({van}) {
     return (
-        <Link to={`${van.id}`}>
+        <Link to={van.id}>
             <div className="van-container">
                 <img src={van.imageUrl} alt="van host image" loading='lazy'/>
                 <div className="text">

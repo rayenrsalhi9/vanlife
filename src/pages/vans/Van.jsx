@@ -5,7 +5,7 @@ import './Van.css'
 export default function Van({ van, vanClassName }) {
     return (
         <section className="van">
-            <Link to={`/vans/${van.id}`}>
+            <Link to={van.id}>
                 <img src={van.imageUrl} alt="van image" loading='lazy'/>
                 <div className="text">
                     <h3>{van.name}</h3>
