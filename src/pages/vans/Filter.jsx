@@ -25,7 +25,7 @@ const Filter = ({filterType, searchParams}) => {
                     <NavLink to={generateSearchParam('type', 'rugged')} className={generateClassName('rugged')}>rugged</NavLink>
                     <NavLink to={generateSearchParam('type', 'luxury')} className={generateClassName('luxury')}>luxury</NavLink>
                 </div>
-                <Link to='.' className='clear-filter-option'>clear filters</Link>
+                {filterType && <Link to='.' className='clear-filter-option'>clear filters</Link>}
             </div>
         </div>
     )
