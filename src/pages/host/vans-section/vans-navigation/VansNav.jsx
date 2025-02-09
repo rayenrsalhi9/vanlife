@@ -5,13 +5,13 @@ import './VansNav.css'
 export default function VansNav() {
     return (
         <div className="navigation">
-            <NavLink end to={'.'} relative="path">
+            <NavLink end to='.' relative="path">
                 Details
             </NavLink>
-            <NavLink to={'pricing'} relative="path">
+            <NavLink to='pricing' relative="path">
                 Pricing
             </NavLink>
-            <NavLink to={'photos'} relative="path">
+            <NavLink to='photos' relative="path">
                 Photos
             </NavLink>
         </div>
