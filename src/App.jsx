@@ -14,13 +14,13 @@ import './App.css'
 import VansLayout from './pages/host/vans-section/VansLayout.jsx'
 import Pricing from './pages/host/vans-section/pricing/Pricing.jsx'
 import Photos from './pages/host/vans-section/photos/Photos.jsx'
+import NotFound from './components/NotFound.jsx'
 
 const App = () => {
     return(
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<Layout />}>
-                
                     <Route index element={<Home />}/>
                     <Route path='about' element={<About />}/>
                     <Route path='vans' element={<Vans />} />
@@ -37,6 +37,7 @@ const App = () => {
                         </Route>
                         <Route path='reviews' element={<Reviews />}/>
                     </Route>
+                    <Route path='*' element={<NotFound />} />
                 </Route>      
             </Routes>
         </BrowserRouter>
