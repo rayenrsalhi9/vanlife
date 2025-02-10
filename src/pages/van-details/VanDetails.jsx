@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
+import { useParams, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import clsx from 'clsx'
 import leftArrow from '../../assets/left-arrow.svg'
@@ -7,6 +7,7 @@ import './VanDetails.css'
 
 export default function VanDetails() {
     const params = useParams()
+    const location = useLocation()
     const [van, setVan] = useState(null)
 
     useEffect(() => {
@@ -27,9 +28,14 @@ export default function VanDetails() {
         <section className="details">
             {van ? (
                 <>
-                    <Link to='..' relative='path'>
+                    <Link 
+                        to={location.state.search ? 
+                            `..?${location.state.search}` : 
+                            '..'} 
+                        relative='path'
+                    >
                         <img src={leftArrow} alt="left arrow image" className='left-arrow' />
-                        <p>Back to all vans</p>
+                        <p>Back to {location.state.search ? `${location.state.type || 'all'}`:'all'} vans</p>
                     </Link>
                     <img src={van.imageUrl} alt="van details image" className='details-img'/>
                     <div className="text">

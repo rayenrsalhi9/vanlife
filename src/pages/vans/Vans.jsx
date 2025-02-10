@@ -9,7 +9,7 @@ import '../../server'
 export default function Vans() {
 
     // filtering vans
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams, setSearchParams] = useSearchParams(); // type: object
     const filterType = searchParams.get('type')
     
     // displaying vans
@@ -30,7 +30,14 @@ export default function Vans() {
         })
         return(
             !filterType ? <Van key={el.id} van={el} vanClassName={vanClassName}/> :
-            el.type === filterType && <Van key={el.id} van={el} vanClassName={vanClassName}/>
+            el.type === filterType && 
+                <Van 
+                    key={el.id} 
+                    van={el} 
+                    vanClassName={vanClassName} 
+                    searchParams={searchParams.toString()}
+                    filterType={filterType}
+                />
         )
     })
     
