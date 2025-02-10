@@ -5,10 +5,14 @@ import Van from './Van'
 import clsx from 'clsx'
 import './Vans.css'
 import '../../server'
+import getVans from '../../vansApi'
 
 export default function Vans() {
 
+    const [loading, setLoading] = useState(false)
+
     // filtering vans
+    // eslint-disable-next-line no-unused-vars
     const [searchParams, setSearchParams] = useSearchParams(); // type: object
     const filterType = searchParams.get('type')
     
@@ -16,10 +20,13 @@ export default function Vans() {
     const [vans, setVans] = useState([])
 
     useEffect(() => {
-        fetch('/api/vans')
-            .then(data => data.json())
-            .then(res => setVans(res.vans))
-            .catch(error => console.error("Error fetching vans:", error));
+        async function loadVans () {
+            setLoading(true)
+            const data = await getVans()
+            setVans(data)
+            setLoading(false)
+        }
+        loadVans()
     }, [])
 
     const vansElements = vans.map(el => {
@@ -40,6 +47,8 @@ export default function Vans() {
                 />
         )
     })
+
+    if (loading) return <h1 className='loading-message'>Loading...</h1>
     
     return (
         <section className='vans-container'>

@@ -131,20 +131,3 @@
     color: #FFFFFF;
     background: #FF8C38;
 }
-
-.details > .loading-message {
-    font-size: 32px;
-    font-weight: 700;
-    color: #161616;
-    text-align: center;
-    animation: fade 1s ease-in-out infinite;
-}
-
-@keyframes fade {
-    0%, 20%, 80%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
-}
