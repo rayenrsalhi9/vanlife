@@ -10,21 +10,26 @@ import getVans from '../../vansApi'
 export default function Vans() {
 
     const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
 
-    // filtering vans
     // eslint-disable-next-line no-unused-vars
     const [searchParams, setSearchParams] = useSearchParams(); // type: object
     const filterType = searchParams.get('type')
     
-    // displaying vans
     const [vans, setVans] = useState([])
 
     useEffect(() => {
         async function loadVans () {
             setLoading(true)
-            const data = await getVans()
-            setVans(data)
-            setLoading(false)
+            try {
+                const data = await getVans()
+                setVans(data)
+            } catch(error) {
+                console.error(`error loading vans : ${error}`)
+                setError(error)
+            } finally {
+                setLoading(false)
+            }  
         }
         loadVans()
     }, [])
@@ -49,6 +54,8 @@ export default function Vans() {
     })
 
     if (loading) return <h1 className='loading-message'>Loading...</h1>
+    
+    if (error) return <h1 className='error-message'>There was an error during displaying vans, try reloading the page or coming back later...</h1>
     
     return (
         <section className='vans-container'>

@@ -106,11 +106,17 @@ footer {
     background: #000;
 }
 
-.loading-message {
+.loading-message,
+.error-message {
+    max-width: 549px;
+    margin: 0 auto;
     padding: 20px;
     font-size: 32px;
     font-weight: 700;
     color: #161616;
+}
+
+.loading-message {
     text-align: center;
     animation: fade 1s ease-in-out infinite;
 }
