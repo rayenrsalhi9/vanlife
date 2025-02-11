@@ -1,7 +1,11 @@
+import { useRouteError } from "react-router-dom"
+
 export default function ErrorMsg() {
+    const error = useRouteError()
     return (
         <div className="error-msg">
-            <h1>An error occured, try refreshing page or come back later...</h1>
+            <pre>{error.statusText} - {error.status}</pre>
+            <h1>Error: {error.message}</h1>
         </div>
     )
 }
