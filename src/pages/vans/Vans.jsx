@@ -1,40 +1,24 @@
-import { useEffect, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useSearchParams, useLoaderData } from 'react-router-dom'
 import Filter from './Filter'
 import Van from './Van'
 import clsx from 'clsx'
-import './Vans.css'
 import '../../server'
 import getVans from '../../vansApi'
+import './Vans.css'
+
+// eslint-disable-next-line react-refresh/only-export-components
+export function loader() {
+    return getVans()
+}
 
 export default function Vans() {
-
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState(null)
+    const vansData = useLoaderData()
 
     // eslint-disable-next-line no-unused-vars
-    const [searchParams, setSearchParams] = useSearchParams(); // type: object
+    const [searchParams, setSearchParams] = useSearchParams();
     const filterType = searchParams.get('type')
-    
-    const [vans, setVans] = useState([])
 
-    useEffect(() => {
-        async function loadVans () {
-            setLoading(true)
-            try {
-                const data = await getVans()
-                setVans(data)
-            } catch(error) {
-                console.error(`error loading vans : ${error}`)
-                setError(error)
-            } finally {
-                setLoading(false)
-            }  
-        }
-        loadVans()
-    }, [])
-
-    const vansElements = vans.map(el => {
+    const vansElements = vansData.map(el => {
         const vanClassName = clsx({
             'simple': el.type === 'simple',
             'rugged': el.type === 'rugged',
@@ -52,10 +36,6 @@ export default function Vans() {
                 />
         )
     })
-
-    if (loading) return <h1 className='loading-message'>Loading...</h1>
-    
-    if (error) return <h1 className='error-message'>There was an error during displaying vans, try reloading the page or coming back later...</h1>
     
     return (
         <section className='vans-container'>

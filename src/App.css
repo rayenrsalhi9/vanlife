@@ -106,17 +106,13 @@ footer {
     background: #000;
 }
 
-.loading-message,
-.error-message {
+.loading-message {
     max-width: 549px;
     margin: 0 auto;
     padding: 20px;
     font-size: 32px;
     font-weight: 700;
     color: #161616;
-}
-
-.loading-message {
     text-align: center;
     animation: fade 1s ease-in-out infinite;
 }
@@ -128,4 +124,17 @@ footer {
     50% {
         opacity: 0.5;
     }
+}
+
+.error-msg {
+    max-width: 549px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #FFF7ED;
+}
+
+.error-msg > h1 {
+    color: #161616;
+    font-size: 32px;
+    font-weight: 700;
 }

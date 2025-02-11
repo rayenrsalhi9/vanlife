@@ -1,5 +1,4 @@
 import { 
-    Routes, 
     Route,
     createBrowserRouter,
     RouterProvider,
@@ -7,7 +6,7 @@ import {
 } from 'react-router-dom'
 import Home from './pages/home/Home.jsx'
 import About from './pages/about/About.jsx'
-import Vans from './pages/vans/Vans.jsx'
+import Vans, {loader as vansLoader} from './pages/vans/Vans.jsx'
 import VanDetails from './pages/van-details/VanDetails.jsx'
 import Layout from './components/Layout.jsx'
 import HostLayout from './pages/host/HostLayout.jsx'
@@ -21,18 +20,29 @@ import VansLayout from './pages/host/vans-section/VansLayout.jsx'
 import Pricing from './pages/host/vans-section/pricing/Pricing.jsx'
 import Photos from './pages/host/vans-section/photos/Photos.jsx'
 import NotFound from './components/NotFound.jsx'
+import ErrorMsg from './components/ErrorMsg.jsx'
 
 const router = createBrowserRouter(createRoutesFromElements(
     <Route path='/' element={<Layout />}>
         <Route index element={<Home />}/>
         <Route path='about' element={<About />}/>
-        <Route path='vans' element={<Vans />} />
+        <Route 
+            path='vans' 
+            element={<Vans />} 
+            loader={vansLoader} 
+            errorElement={<ErrorMsg />}
+        />
         <Route path='vans/:id' element={<VanDetails />} />
 
         <Route  path='host' element={<HostLayout />}>    
             <Route index element={<Dashboard />}/>
             <Route path='income' element={<Income />}/>
-            <Route path='vans' element={<HostVans />}/>
+            <Route 
+                path='vans' 
+                element={<HostVans />} 
+                loader={vansLoader} 
+                errorElement={<ErrorMsg />}
+            />
             <Route path='vans/:id' element={<VansLayout />}>
                 <Route index element={<HostVanDetails />}/>
                 <Route path='pricing' element={<Pricing />}/>
