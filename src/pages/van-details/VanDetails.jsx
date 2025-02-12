@@ -1,21 +1,19 @@
 import { Link } from 'react-router-dom'
-import { useParams, useLocation } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useLocation, useLoaderData } from 'react-router-dom'
 import clsx from 'clsx'
 import leftArrow from '../../assets/left-arrow.svg'
+import { getVanDetails } from '../../vansApi'
 import './VanDetails.css'
 
-export default function VanDetails() {
-    const params = useParams()
-    const location = useLocation()
-    const [van, setVan] = useState(null)
+// eslint-disable-next-line react-refresh/only-export-components
+export function vanDetailsLoader({ params }) {
+    return getVanDetails(params.id)
+}
 
-    useEffect(() => {
-        fetch(`/api/vans/${params.id}`)
-        .then(data => data.json())
-        .then(res => setVan(res.vans))
-        .catch((error) => console.error(`Error fetching data: ${error}`))
-    }, [params.id])
+export default function VanDetails() {
+    const location = useLocation()
+
+    const van = useLoaderData()
 
     const className = clsx({
         'type': true,
