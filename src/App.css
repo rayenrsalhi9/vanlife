@@ -13,18 +13,18 @@ header {
     border-bottom: 1px solid #ededed;
 }
 
-header a {
+header a:not(.account-icon) {
     text-decoration: none;
     transition: .4s;
 }
 
-header a:hover {
+header a:not(.account-icon):hover {
     text-decoration: underline;
     text-underline-offset: 2px;
     color: #000;
 }
 
-header a.active {
+header a:not(.account-icon).active {
     text-decoration: underline;
     text-underline-offset: 2px;
     color: #000;
@@ -43,12 +43,23 @@ header > nav {
     gap: 15px;
 }
 
-header > nav > a {
+header > nav > a:not(.account-icon) {
     color: #4D4D4D;
     font-size: 16px;
     font-weight: 600;
 }
 
+header > nav > a.account-icon {
+    cursor: pointer;
+}
+
+header .account-icon > img {
+    width: 20px;
+    object-fit: contain;
+}
+
+
+/* Footer */
 footer {
     max-width: 549px;
     height: 75px;
