@@ -1,3 +1,4 @@
+/* Header */
 header {
     max-width: 549px;
     height: 112px;
@@ -57,8 +58,6 @@ header .account-icon > img {
     width: 20px;
     object-fit: contain;
 }
-
-
 /* Footer */
 footer {
     max-width: 549px;
@@ -75,7 +74,7 @@ footer {
     justify-content: center;
     align-items: center;
 }
-
+/* Not found message */
 .not-found {
     max-width: 549px;
     margin: 0 auto;
@@ -116,27 +115,7 @@ footer {
 .not-found > a:hover {
     background: #000;
 }
-
-.loading-message {
-    max-width: 549px;
-    margin: 0 auto;
-    padding: 20px;
-    font-size: 32px;
-    font-weight: 700;
-    color: #161616;
-    text-align: center;
-    animation: fade 1s ease-in-out infinite;
-}
-
-@keyframes fade {
-    0%, 20%, 80%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
-}
-
+/* Error message */
 .error-msg {
     max-width: 549px;
     margin: 0 auto;
