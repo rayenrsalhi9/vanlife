@@ -1,6 +1,14 @@
 import { useLoaderData } from "react-router-dom"
 import HostVan from "./HostVan"
+import { requireAuth } from "../../../utils"
+import { getVans } from "../../../vansApi"
 import '../../../server'
+
+// eslint-disable-next-line react-refresh/only-export-components
+export async function hostVansLoader() {
+    await requireAuth()
+    return getVans()
+}
 
 export default function HostVans() {
     const hostVans = useLoaderData()
