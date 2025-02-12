@@ -21,6 +21,7 @@ import Pricing from './pages/host/vans-section/pricing/Pricing.jsx'
 import Photos from './pages/host/vans-section/photos/Photos.jsx'
 import NotFound from './components/NotFound.jsx'
 import ErrorMsg from './components/ErrorMsg.jsx'
+import Login from './pages/login/Login.jsx'
 
 const router = createBrowserRouter(createRoutesFromElements(
     <Route path='/' element={<Layout />}>
@@ -50,6 +51,7 @@ const router = createBrowserRouter(createRoutesFromElements(
             </Route>
             <Route path='reviews' element={<Reviews />}/>
         </Route>
+        <Route path='login' element={<Login />} />
         <Route path='*' element={<NotFound />} />
     </Route>
 ))

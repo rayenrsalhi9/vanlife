@@ -1,0 +1,88 @@
+.login {
+    max-width: 549px;
+    margin: 0 auto;
+    background: #FFF7ED;
+    padding: 25px;
+}
+
+.login > h1 {
+    color: #161616;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.login > form {
+    max-width: 494px;
+    margin: 30px auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login > form > input {
+    width: 100%;
+    max-width: 494px;
+    height: 42px;
+
+    padding: 9px 13px;
+    border: 1px solid #D1D5DB;
+
+    font-size: 16px;
+    color: #161616;
+}
+
+.login > form > input[type="email"] {
+    border-radius: 6px 6px 0 0;
+}
+
+.login > form > input[type="password"] {
+    border-radius: 0 0 6px 6px;
+}
+
+.login > form > input::placeholder{
+    font-family: 'Inter' sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4D4D4D;
+} 
+
+.login > form > button {
+    width: 100%;
+    max-width: 494px;
+    height: 55px;
+
+    margin: 20px auto 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #FF8C38;
+    color: #FFFFFF;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+    transition: .4s;
+}
+
+.login > form > button:hover {
+    background: #fb7f27;
+}
+
+.login > p {
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+}
+
+.login > p > span {
+    font-weight: 600;
+    color: #FF8C38;
+}

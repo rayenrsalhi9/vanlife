@@ -14,8 +14,7 @@ export function loader() {
 export default function Vans() {
     const vansData = useLoaderData()
 
-    // eslint-disable-next-line no-unused-vars
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
     const filterType = searchParams.get('type')
 
     const vansElements = vansData.map(el => {
