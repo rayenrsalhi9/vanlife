@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { loginUser } from '../../api'
-import { useLoaderData } from 'react-router-dom'
+import { useLoaderData, useNavigate } from 'react-router-dom'
 import './Login.css'
 
 export function loginLoader({ request }) {
@@ -9,6 +9,7 @@ export function loginLoader({ request }) {
 
 export default function Login() {
     const loaderMessage = useLoaderData()
+    const navigate = useNavigate()
 
     const [login, setLogin] = useState({email: '', password: ''})
     const [status, setStatus] = useState('idle')
@@ -26,7 +27,7 @@ export default function Login() {
         setError(null)
 
         loginUser(login)
-            .then(res => console.log(res))
+            .then(() => navigate('/host', { replace: true}))
             .catch(err => setError(err.message))
             .finally(() => {
                 setLogin({email: '', password: ''})
