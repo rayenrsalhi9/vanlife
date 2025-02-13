@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom"
 import HostVan from "./HostVan"
 import { requireAuth } from "../../../utils"
-import { getVans } from "../../../vansApi"
+import { getVans } from "../../../api"
 import '../../../server'
 
 // eslint-disable-next-line react-refresh/only-export-components

@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import './Login.css'
+import { loginUser } from '../../api'
 import { useLoaderData } from 'react-router-dom'
+import './Login.css'
 
 export function loginLoader({ request }) {
     return new URL(request.url).searchParams.get('message')
@@ -10,6 +11,8 @@ export default function Login() {
     const loaderMessage = useLoaderData()
 
     const [login, setLogin] = useState({email: '', password: ''})
+    const [status, setStatus] = useState('idle')
+    const [error, setError] = useState(null)
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -18,8 +21,17 @@ export default function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(`Your data: ${login.email} | ${login.password}`)
-        setLogin({email: '', password: ''})
+
+        setStatus('submitting')
+        setError(null)
+
+        loginUser(login)
+            .then(res => console.log(res))
+            .catch(err => setError(err.message))
+            .finally(() => {
+                setLogin({email: '', password: ''})
+                setStatus('idle')
+            }) 
     }
 
     return (
@@ -46,10 +58,20 @@ export default function Login() {
                     value={login.password}
                     onChange={handleChange}
                 />
-                <button>Sign in</button>
+                <button 
+                    disabled={status === 'submitting'}
+                >
+                    {
+                        status === 'submitting' ?
+                        'Please wait' :
+                        'Sign in'
+                    }
+                </button>
             </form>
 
             <p>Don’t have an account? <span>Create one now</span></p>
+
+            { error ? <h4 className='form-error-msg'>{error}</h4> : null }
 
         </div>
     )

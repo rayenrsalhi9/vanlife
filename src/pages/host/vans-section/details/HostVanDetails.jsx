@@ -1,7 +1,7 @@
 import { useOutletContext } from 'react-router-dom'
 import propTypes from 'prop-types'
 import { requireAuth } from '../../../../utils'
-import { getVanDetails } from '../../../../vansApi'
+import { getVanDetails } from '../../../../api'
 import './HostVanDetails.css'
 
 // eslint-disable-next-line react-refresh/only-export-components

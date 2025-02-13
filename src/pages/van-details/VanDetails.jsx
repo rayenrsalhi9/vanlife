@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useLocation, useLoaderData } from 'react-router-dom'
 import clsx from 'clsx'
 import leftArrow from '../../assets/left-arrow.svg'
-import { getVanDetails } from '../../vansApi'
+import { getVanDetails } from '../../api'
 import './VanDetails.css'
 
 // eslint-disable-next-line react-refresh/only-export-components

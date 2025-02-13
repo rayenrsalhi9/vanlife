@@ -76,6 +76,11 @@
     background: #fb7f27;
 }
 
+.login > form > button:disabled {
+    opacity: .5;
+    cursor: initial;
+}
+
 .login > p {
     font-weight: 500;
     font-size: 16px;
@@ -91,4 +96,10 @@
     color: rgb(207, 0, 0);
     text-align: center;
     margin-bottom: 30px;
+}
+
+.login > .form-error-msg {
+    color: rgb(207, 0, 0);
+    text-align: center;
+    margin-top: 30px;
 }

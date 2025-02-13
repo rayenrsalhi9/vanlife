@@ -3,7 +3,7 @@ import Filter from './Filter'
 import Van from './Van'
 import clsx from 'clsx'
 import '../../server'
-import { getVans } from '../../vansApi'
+import { getVans } from '../../api'
 import './Vans.css'
 
 // eslint-disable-next-line react-refresh/only-export-components
