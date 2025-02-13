@@ -1,7 +1,21 @@
 import { useState } from 'react'
 import { loginUser } from '../../api'
-import { useLoaderData, useNavigate } from 'react-router-dom'
+import { useLoaderData, Form, redirect } from 'react-router-dom'
 import './Login.css'
+
+export async function action({ request }) {
+    const formData = await request.formData()
+    const email = formData.get('email')
+    const password = formData.get('password')
+    try {
+        await loginUser({email, password})
+        localStorage.setItem('isLoggedIn', true)
+        return window.location.href = '/host'
+    } catch(err) {
+        console.log('error here: ', err)
+    }
+    return null
+}
 
 export function loginLoader({ request }) {
     return new URL(request.url).searchParams.get('message')
@@ -9,31 +23,9 @@ export function loginLoader({ request }) {
 
 export default function Login() {
     const loaderMessage = useLoaderData()
-    const navigate = useNavigate()
 
-    const [login, setLogin] = useState({email: '', password: ''})
     const [status, setStatus] = useState('idle')
     const [error, setError] = useState(null)
-
-    const handleChange = (e) => {
-        const { name, value } = e.target
-        setLogin(prevLogin => ({...prevLogin, [name]: value}))
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-
-        setStatus('submitting')
-        setError(null)
-
-        loginUser(login)
-            .then(() => navigate('/host', { replace: true}))
-            .catch(err => setError(err.message))
-            .finally(() => {
-                setLogin({email: '', password: ''})
-                setStatus('idle')
-            }) 
-    }
 
     return (
         <div className='login'>
@@ -42,22 +34,16 @@ export default function Login() {
 
             <h1>Sign in to your account</h1>
 
-            <form onSubmit={handleSubmit}>
+            <Form method='post'>
                 <input 
                     name='email'
                     type='email' 
                     placeholder='Email address' 
-                    aria-label='email'
-                    value={login.email} 
-                    onChange={handleChange}
                 />
                 <input
                     name='password'
                     type='password'
                     placeholder='Password'
-                    aria-label='password'
-                    value={login.password}
-                    onChange={handleChange}
                 />
                 <button 
                     disabled={status === 'submitting'}
@@ -68,7 +54,7 @@ export default function Login() {
                         'Sign in'
                     }
                 </button>
-            </form>
+            </Form>
 
             <p>Don’t have an account? <span>Create one now</span></p>
 

@@ -21,7 +21,7 @@ import Pricing from './pages/host/vans-section/pricing/Pricing.jsx'
 import Photos from './pages/host/vans-section/photos/Photos.jsx'
 import NotFound from './components/NotFound.jsx'
 import ErrorMsg from './components/ErrorMsg.jsx'
-import Login, { loginLoader } from './pages/login/Login.jsx'
+import Login, { loginLoader, action as loginAction } from './pages/login/Login.jsx'
 import { requireAuth } from './utils.js'
 
 const router = createBrowserRouter(createRoutesFromElements(
@@ -66,7 +66,12 @@ const router = createBrowserRouter(createRoutesFromElements(
                 element={<Reviews />}
             />
         </Route>
-        <Route path='login' element={<Login />} loader={loginLoader} />
+        <Route 
+            path='login' 
+            element={<Login />} 
+            loader={loginLoader} 
+            action={loginAction} 
+        />
         <Route path='*' element={<NotFound />} />
     </Route>
 ))
