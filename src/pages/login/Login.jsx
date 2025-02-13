@@ -1,7 +1,14 @@
 import { useState } from 'react'
 import './Login.css'
+import { useLoaderData } from 'react-router-dom'
+
+export function loginLoader({ request }) {
+    return new URL(request.url).searchParams.get('message')
+}
 
 export default function Login() {
+    const loaderMessage = useLoaderData()
+
     const [login, setLogin] = useState({email: '', password: ''})
 
     const handleChange = (e) => {
@@ -17,7 +24,11 @@ export default function Login() {
 
     return (
         <div className='login'>
+
+            {loaderMessage ? <h3 className="loader-message">{loaderMessage}</h3> : null }
+
             <h1>Sign in to your account</h1>
+
             <form onSubmit={handleSubmit}>
                 <input 
                     name='email'
@@ -30,14 +41,16 @@ export default function Login() {
                 <input
                     name='password'
                     type='password'
-                    placeholder='Passwword'
+                    placeholder='Password'
                     aria-label='password'
                     value={login.password}
                     onChange={handleChange}
                 />
                 <button>Sign in</button>
             </form>
+
             <p>Don’t have an account? <span>Create one now</span></p>
+
         </div>
     )
 }

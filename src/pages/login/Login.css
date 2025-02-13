@@ -86,3 +86,9 @@
     font-weight: 600;
     color: #FF8C38;
 }
+
+.login > .loader-message {
+    color: rgb(207, 0, 0);
+    text-align: center;
+    margin-bottom: 30px;
+}
