@@ -7,12 +7,39 @@
 .vans {
     max-width: 549px;
     margin: 0 auto;
-    margin-bottom: 30px;
+    padding-bottom: 30px;
     
+    background: #FFF7ED;
 
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     gap: 20px;
+}
+
+.vans > .loading-message {
+    color: #161616;
+    font-size: 32px;
+    animation: fade 2s ease-in infinite;
+}
+
+@keyframes fade {
+    0%, 20% {
+        content: "Loading";
+    }
+    40% {
+        content: "Loading.";
+    }
+    60% {
+        content: "Loading..";
+    }
+    80%, 100% {
+        content: "Loading...";
+    }
+}
+
+.vans > .loading-message::after {
+    content: "loading";
+    animation: fade 2s steps(4, end) infinite;
 }
