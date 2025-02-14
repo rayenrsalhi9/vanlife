@@ -1,6 +1,12 @@
 /* eslint-disable react-refresh/only-export-components */
 import { loginUser } from '../../api'
-import { useLoaderData, Form, redirect, useActionData } from 'react-router-dom'
+import { 
+    useLoaderData, 
+    Form, 
+    redirect, 
+    useActionData,
+    useNavigation } 
+from 'react-router-dom'
 import './Login.css'
 
 export async function action({ request }) {
@@ -23,6 +29,7 @@ export function loginLoader({ request }) {
 export default function Login() {
     const loaderMessage = useLoaderData()
     const error = useActionData()
+    const navigation = useNavigation()
 
     return (
         <div className='login'>
@@ -39,7 +46,9 @@ export default function Login() {
                     type='password'
                     placeholder='Password'
                 />
-                <button>Sign in</button>
+                <button disabled={navigation.state !== 'idle'}>
+                    {navigation.state !== 'idle' ? 'Signing in...' : 'Sign in'}
+                </button>
             </Form>
             <p>Don’t have an account? <span>Create one now</span></p>
             {error && <h3 className='form-error-msg'>{error}</h3>}
