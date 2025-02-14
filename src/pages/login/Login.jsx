@@ -13,21 +13,27 @@ export async function action({ request }) {
     const formData = await request.formData()
     const email = formData.get('email')
     const password = formData.get('password')
+
+    const pathname = new URL(request.url).searchParams.get('pathname') || '/host'
+
     try {
         await loginUser({email, password})
         localStorage.setItem('isLoggedIn', true)
-        return redirect('/host')
+        return redirect(pathname)
     } catch(err) {
         return err.message
     }
 }
 
 export function loginLoader({ request }) {
-    return new URL(request.url).searchParams.get('message')
+    return {
+        message: new URL(request.url).searchParams.get('message'),
+        pathname: new URL(request.url).searchParams.get('pathname')
+    }
 }
 
 export default function Login() {
-    const loaderMessage = useLoaderData()
+    const loaderMessage = useLoaderData().message
     const error = useActionData()
     const navigation = useNavigation()
 

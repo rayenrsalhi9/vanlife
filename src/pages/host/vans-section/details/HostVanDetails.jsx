@@ -5,8 +5,8 @@ import { getVanDetails } from '../../../../api'
 import './HostVanDetails.css'
 
 // eslint-disable-next-line react-refresh/only-export-components
-export async function hostVanDetailsLoader({ params }) {
-    await requireAuth()
+export async function hostVanDetailsLoader({ params, request }) {
+    await requireAuth(request)
     return getVanDetails(params.id)
 }
 

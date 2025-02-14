@@ -6,8 +6,7 @@ import clsx from "clsx"
 import './VansLayout.css'
 
 export async function loader({request}) {
-    console.log(new URL(request.url))
-    await requireAuth()
+    await requireAuth(request)
     return null
 }
 
