@@ -16,13 +16,12 @@ import HostVans, { hostVansLoader } from './pages/host/vans-section/HostVans.jsx
 import HostVanDetails, { hostVanDetailsLoader } from './pages/host/vans-section/details/HostVanDetails.jsx'
 import Reviews from './pages/host/review-section/Reviews.jsx'
 import './App.css'
-import VansLayout from './pages/host/vans-section/VansLayout.jsx'
+import VansLayout, { loader as hostRequireLoginLoader} from './pages/host/vans-section/VansLayout.jsx'
 import Pricing from './pages/host/vans-section/pricing/Pricing.jsx'
 import Photos from './pages/host/vans-section/photos/Photos.jsx'
 import NotFound from './components/NotFound.jsx'
 import ErrorMsg from './components/ErrorMsg.jsx'
 import Login, { loginLoader, action as loginAction } from './pages/login/Login.jsx'
-import { requireAuth } from './utils.js'
 
 const router = createBrowserRouter(createRoutesFromElements(
     <Route path='/' element={<Layout />}>
@@ -40,7 +39,7 @@ const router = createBrowserRouter(createRoutesFromElements(
             loader={detailsLoader}
         />
 
-        <Route path='host' element={<HostLayout />} loader={async () => await requireAuth()}>  
+        <Route path='host' element={<HostLayout />} loader={hostRequireLoginLoader}>  
             <Route index element={<Dashboard />} />
             <Route path='income' element={<Income />} />
             <Route 

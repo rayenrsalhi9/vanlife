@@ -1,11 +1,17 @@
 import VansNav from "./vans-navigation/VansNav"
 import { Link, Outlet, useLoaderData } from "react-router-dom"
+import { requireAuth } from "../../../utils"
 import leftArrow from '../../../assets/left-arrow.svg'
 import clsx from "clsx"
 import './VansLayout.css'
 
-export default function VansLayout() {
+export async function loader({request}) {
+    console.log(new URL(request.url))
+    await requireAuth()
+    return null
+}
 
+export default function VansLayout() {
     const details = useLoaderData()
 
     const typeClassName = clsx({
