@@ -70,7 +70,7 @@ const router = createBrowserRouter(createRoutesFromElements(
             path='login' 
             element={<Login />} 
             loader={loginLoader} 
-            action={loginAction} 
+            action={loginAction}
         />
         <Route path='*' element={<NotFound />} />
     </Route>
