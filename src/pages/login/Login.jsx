@@ -1,5 +1,7 @@
+/* eslint-disable react-refresh/only-export-components */
 import { loginUser } from '../../api'
-import { useLoaderData, Form } from 'react-router-dom'
+import { useLoaderData, Form, useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 import './Login.css'
 
 export async function action({ request }) {
@@ -9,9 +11,9 @@ export async function action({ request }) {
     try {
         await loginUser({email, password})
         localStorage.setItem('isLoggedIn', true)
-        return window.location.href = '/host'
     } catch(err) {
         console.log('error here: ', err)
+        return err
     }
     return null
 }
@@ -22,6 +24,16 @@ export function loginLoader({ request }) {
 
 export default function Login() {
     const loaderMessage = useLoaderData()
+
+    const shouldRedirect = localStorage.getItem('isLoggedIn') || false;
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (shouldRedirect) {
+        navigate('/host');
+        }
+    });
 
     return (
         <div className='login'>
