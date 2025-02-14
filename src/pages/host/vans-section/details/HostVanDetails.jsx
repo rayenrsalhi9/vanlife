@@ -1,14 +1,6 @@
 import { useOutletContext } from 'react-router-dom'
 import propTypes from 'prop-types'
-import { requireAuth } from '../../../../utils'
-import { getVanDetails } from '../../../../api'
 import './HostVanDetails.css'
-
-// eslint-disable-next-line react-refresh/only-export-components
-export async function hostVanDetailsLoader({ params, request }) {
-    await requireAuth(request)
-    return getVanDetails(params.id)
-}
 
 export default function HostVanDetails() {
     const details = useOutletContext()
@@ -20,7 +12,7 @@ export default function HostVanDetails() {
                     <p><b>Category: </b>{details.type}</p>
                     <p><b>Description: </b>{details.description}</p>
                     <p><b>Visibility: </b>Public</p>
-                </div>
+                </div>       
             </div>
         </section>
     )
