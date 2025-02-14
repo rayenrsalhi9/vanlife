@@ -1,7 +1,19 @@
-
+import { useOutletContext } from "react-router-dom"
+import './Photos.css'
 
 export default function Photos() {
+    const vanDetails = useOutletContext()
+
     return (
-        <h1>Photos here</h1>
+        <section className="photos">
+            <img src={vanDetails.imageUrl} alt="van image" />
+            <img src={vanDetails.imageUrl} alt="van image" />
+            <img src={vanDetails.imageUrl} alt="van image" />
+            <img src={vanDetails.imageUrl} alt="van image" />
+            <img src={vanDetails.imageUrl} alt="van image" />
+            <img src={vanDetails.imageUrl} alt="van image" />
+            <img src={vanDetails.imageUrl} alt="van image" />
+            <img src={vanDetails.imageUrl} alt="van image" />
+        </section>
     )
 }
