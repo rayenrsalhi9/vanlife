@@ -28,7 +28,7 @@ export default function Login() {
         <div className='login'>
             {loaderMessage ? <h3 className="loader-message">{loaderMessage}</h3> : null }
             <h1>Sign in to your account</h1>
-            <Form method='post'>
+            <Form method='post' replace>
                 <input 
                     name='email'
                     type='email' 
