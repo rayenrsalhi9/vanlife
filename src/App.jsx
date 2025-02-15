@@ -30,13 +30,14 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route 
             path='vans' 
             element={<Vans />} 
-            loader={vansLoader} 
-            errorElement={<ErrorMsg />}
+            loader={vansLoader}
+            errorElement={<ErrorMsg />} 
         />
         <Route 
             path='vans/:id' 
             element={<VanDetails />} 
             loader={detailsLoader}
+            errorElement={<ErrorMsg />}
         />
 
         <Route path='host' element={<HostLayout />} loader={hostRequireLoginLoader}>  
@@ -48,11 +49,15 @@ const router = createBrowserRouter(createRoutesFromElements(
                 loader={hostVansLoader} 
                 errorElement={<ErrorMsg />}
             />
-            <Route path='vans/:id' element={<VansLayout />} loader={hostVanDetailsLoader}>
+            <Route 
+                path='vans/:id' 
+                element={<VansLayout />} 
+                loader={hostVanDetailsLoader}
+                errorElement={<ErrorMsg />}
+            >
                 <Route 
                     index 
                     element={<HostVanDetails />}
-                    loader={hostVanDetailsLoader}
                 />
                 <Route 
                     path='pricing' 
@@ -70,6 +75,7 @@ const router = createBrowserRouter(createRoutesFromElements(
             element={<Login />} 
             loader={loginLoader} 
             action={loginAction}
+            errorElement={<ErrorMsg />}
         />
         <Route path='*' element={<NotFound />} />
     </Route>
